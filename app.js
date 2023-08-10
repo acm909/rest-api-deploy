@@ -53,7 +53,7 @@ app.post('/movies', (req, res) => {
     ...result.data
   }
 
-  // Esto no es rest porque guardamos el estado de la app en memoria
+  // Esto no es rest porque guardamos el estado de la app en memoria,
   movies.push(newMovie)
   res.status(201).json(newMovie)
 })
