@@ -1,0 +1,48 @@
+### get todas las peliculas
+
+GET http://localhost:1234/movies
+
+####Recuperar una pelicula por id
+GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+### Recuperar todas la peliculas por un genero
+GET http://localhost:1234/movies?genre=drama
+
+
+### POST para crear una pelicula
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    
+    "title": "Oppenheimer",
+    "year": 2023,
+    "director": "Christopher Nolan",
+    "duration": 180,
+    "rate": 7,
+    "poster": "https://pics.filmaffinity.com/Oppenheimer-828933592-large.jpg",
+    "genre":[
+        "Drama",
+        "Thriller"
+    ],
+    "otra_cosa": "vamos a ver que pasa"
+}
+
+
+###Post crear pelicula con parametros incorrectos
+POST http://localhost:1234/movies
+Content-Type:  application/json
+
+{
+    "title": 112,
+    "year": "dosmil"
+}
+
+### Actualizar una pelicula
+PATCH http://localhost:1234/movies/9e6106f0-848b-4810-a11a-3d832a5610f9
+Content-Type: application/json
+
+{
+    "title":"corre forest",
+    "year": 1950
+}
